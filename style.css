@@ -1,0 +1,213 @@
+:root {
+    --soft-blue: hsl( 215, 51%, 70% );
+    --cyan: hsl( 178, 100%, 50% );
+    --very-dark-blue-main-bg: hsl( 217, 54%, 11% );
+    --very-dark-blue-card-bg: hsl( 216, 50%, 16% );
+    --very-dark-blue-line: hsl( 215, 32%, 27% );
+    --white: hsl( 0, 0%, 100% );
+
+    /* Weights: 300, 400, 600 */
+    --ff-outfit: 'Outfit';
+    --font-size: 1.125rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: var( --ff-outfit );
+    font-size: var( --font-size );
+
+    color: var( --soft-blue );
+
+    background-color: var( --very-dark-blue-main-bg );
+}
+
+
+.nft-card-wrapper {
+    width: 20rem;
+
+    padding: 1.5rem;
+    margin-inline: 0.5rem;
+
+    background-color: var( --very-dark-blue-card-bg );
+
+    border-radius: 1rem;
+
+    transition: box-shadow 1s;
+    box-shadow: 0rem 0rem 1.5rem 1rem hsl( 217deg, 50%, 10% );
+}
+.nft-card-wrapper:hover {
+    animation-play-state: paused;
+    box-shadow: 0rem 0rem 1.5rem 1rem hsl( 217deg 54.52% 6.92% );
+}
+.nft-card-wrapper:hover 
+.glow-ethereum { 
+    box-shadow: 0rem 0rem 1rem 0.25rem #008d88;
+}
+
+.nft-card-img-wrapper {
+    border-radius: .5rem;
+    overflow: hidden;
+    background-color: #008d88;
+}
+
+.nft-card-img {
+    height: 20rem;
+    width: 100%;
+
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: .5rem;
+
+    background-image: url( './images/image-equilibrium.jpg' );
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    transition: .5s ease-in-out;
+
+    cursor: pointer;
+}
+.icon-view {
+    transition: visibility 0s, opacity 0.5s linear;
+    visibility: hidden;
+    opacity: 0;
+}
+.nft-card-img:hover {
+    transform: scale( 1.5 );
+}
+.nft-card-img:hover 
+.icon-view { 
+    visibility: visible;
+    opacity: 1;
+}
+
+.overlay {
+    height: 100%;
+    width: 100%;
+    position: absolute; 
+    bottom: 0; 
+    background-color: hsla( 178, 100%, 50%, .25 );
+    transition: .5s ease;
+    opacity:0;
+}
+  
+.nft-card-img:hover .overlay {
+    opacity: 1;
+}
+
+.nft-card-title {
+    margin-block: 1.5rem;
+
+    font-weight: 600;
+
+    color: var( --white );
+    transition: .25s ease-in-out;
+
+    cursor: pointer;
+}
+.nft-card-title:hover {
+    color: var( --cyan );
+}
+
+.nft-card-desc {
+    font-weight: 300;
+}
+
+.nft-card-details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    font-size: 1rem;
+
+    margin-block: 1.5rem;
+}
+
+.glow-ethereum {
+    background-color: #008d88;
+    border-radius: 50%;
+    transition: box-shadow 1s;
+    /* box-shadow: 0rem 0rem 1rem 0.25rem #008d88; */
+}
+
+.nft-card-ethereum,
+.nft-card-timeleft {
+    display: flex;
+    align-items: center;
+}
+
+.ethereum {
+    margin-left: .5rem;
+    font-weight: 600;
+    color: var( --cyan );
+}
+
+.timeleft {
+    margin-left: .5rem;
+    font-weight: 300;
+}
+
+.nft-card-creator {
+    display: flex;
+    align-items: center;
+
+    font-size: 1rem;
+
+    padding-block: 1rem;
+
+    border-top: 1px solid var( --very-dark-blue-line );
+}
+
+.creator-avatar {
+    width: 10%;
+
+    aspect-ratio: 1 / 1;
+
+    border: 1px solid var( --white );
+    border-radius: 50%;
+
+    background-image: url( './images/image-avatar.png' );
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.creator-author {
+    margin-left: 1rem;
+}
+strong {
+    font-weight: 300;
+    color: var( --white );
+    transition: .25s ease-in-out;
+    cursor: pointer;
+}
+strong:hover {
+    color: var( --cyan );
+}
+
+.floating {   
+    animation-name: floating; 
+    animation-duration: 5s; 
+    animation-iteration-count: infinite; 
+    animation-timing-function: ease-in-out; 
+} 
+  
+@keyframes floating { 
+    0% { transform: translate( 0,  0rem ); } 
+    50%  { transform: translate( 0, 0.938rem ); } 
+    100%   { transform: translate( 0, -0rem ); }     
+} 
